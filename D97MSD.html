@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Story Blog</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .sidebar { position: fixed; left: 0; top: 0; width: 200px; height: 100%; background: #333; color: white; padding-top: 20px; }
+        .sidebar a { display: block; color: white; padding: 10px; text-decoration: none; }
+        .sidebar a:hover { background: #575757; }
+        .main-content { margin-left: 220px; padding: 20px; }
+        .auth-container, .post-container { max-width: 400px; margin: auto; padding: 20px; background: white; border-radius: 10px; }
+        .auth-container input, textarea { width: 100%; margin: 10px 0; padding: 8px; }
+        .btn { display: block; width: 100%; padding: 10px; background: blue; color: white; border: none; cursor: pointer; text-align: center; text-decoration: none; }
+        .btn:hover { background: darkblue; }
+        .post { background: white; padding: 15px; border-radius: 10px; margin: 10px 0; position: relative; }
+        /* Buttons disabled since no JS */
+        .like-btn, .comment-btn, .delete-btn { cursor: default; margin-top: 5px; padding: 5px; border: none; opacity: 0.5; pointer-events: none; }
+        .like-btn { background: #ff4d4d; color: white; }
+        .comment-btn { background: #4caf50; color: white; }
+        .delete-btn { background: red; color: white; position: absolute; right: 10px; top: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+        <a href="#">Home</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Welcome Page -->
+    <div class="main-content" id="landingPage">
+        <h1>Welcome to Story Blog</h1>
+        <p>Share and explore amazing stories!</p>
+        <a href="#" class="btn">Get Started</a>
+    </div>
+
+    <!-- Login Form -->
+    <div class="auth-container" id="loginForm">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" required disabled>
+        <input type="password" placeholder="Password" required disabled>
+        <button class="btn" disabled>Login</button>
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="auth-container" id="signupForm">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Username" required disabled>
+        <input type="email" placeholder="Email" required disabled>
+        <input type="password" placeholder="Password" required disabled>
+        <button class="btn" disabled>Sign Up</button>
+        <p>Already have an account? <a href="#">Login</a></p>
+    </div>
+
+    <!-- Home Page -->
+    <div class="main-content" id="homePage">
+        <h1>Welcome, User!</h1>
+        <h2>Write Your Story</h2>
+        <input type="text" placeholder="Story Title" disabled>
+        <textarea placeholder="Write your story here..." disabled></textarea>
+        <button class="btn" disabled>Post Story</button>
+
+        <h2>Recent Stories</h2>
+        <div id="postsContainer">
+            <div class="post">
+                <h3>Sample Story Title <small>by author</small></h3>
+                <p>This is a sample story content to show the layout of a post.</p>
+                <button class="like-btn">❤️ 0</button>
+                <button class="delete-btn">🗑 Delete</button>
+                <input type="text" placeholder="Add a comment" disabled>
+                <button class="comment-btn" disabled>💬 Comment</button>
+                <div id="comments0">
+                    <p>Sample comment</p>
+                </div>
+            </div>
+            <!-- More static posts can be added here -->
+        </div>
+    </div>
+
+</body>
+</html>
